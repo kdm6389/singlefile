@@ -12,16 +12,15 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" ]; then
 			echo 0 > $WPSLED
 			sleep 1
 		done 
-	) &  # content in ()& is forked child in backgroung 
+	) &                               # content in ()& is forked child in backgroung 
 
 		cd /var/run/hostapd
 		for socket in *; do
 			[ -S "$socket" ] || continue
 			hostapd_cli -i "$socket" wps_pbc
-			sleep 1
-			trap 'kill $(jobs -p)' EXIT  #kill all child created using fork()
-			echo 0 > $WPSLED  #set wps-led off
 		done
+	trap 'kill $(jobs -p)' EXIT         #kill all child
+	echo 0 > $WPSLED	            # set wps-led off just to make sure might not nededed
 fi
 return 0
 
