@@ -20,6 +20,6 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" ]; then
 			hostapd_cli -i "$socket" wps_pbc
 		done
 	echo 0 > $WPSLED	            # set wps-led off just to make sure might not nededed
-	trap 'kill $(jobs -p)' EXIT         #kill all child
+	pkill -TERM -P $$         #kill all child having parent pid as "wps" pid 
 fi
 return 0
