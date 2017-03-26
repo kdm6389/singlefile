@@ -18,6 +18,7 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" ]; then
 		logger "WPS button is pressed (ended)"
 		pgrep -P `echo $$`  #kill all child
 		echo 0 > $LOGO
+	done
 
 fi
 return 0
