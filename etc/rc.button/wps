@@ -1,0 +1,24 @@
+#!/bin/sh
+
+LOGO="/sys/class/leds/wndr4700:white:logo/brightness"
+
+if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" ]; then
+	(	for i in $(seq 0 59); do
+			echo 1 > $LOGO
+			sleep 1
+			echo 0 > $LOGO
+			sleep 1
+		done
+	) &  # content in ()& is forked child in backgroung 
+
+	cd /var/run/hostapd
+	for socket in *; do
+		[ -S "$socket" ] || continue
+		hostapd_cli -i "$socket" wps_pbc
+		logger "WPS button is pressed (ended)"
+		pgrep -P `echo $$`  #kill all child
+		echo 0 > $LOGO
+
+fi
+return 0
+
