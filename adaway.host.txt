@@ -4,3 +4,6 @@
 
 127.0.0.1 localhost
 ::1 localhost
+
+#[TheHindu]
+127.0.0.1 d8.exo.com
