@@ -1,7 +1,6 @@
 # My adaway Host list 
 # target Google/xda/news-site/railway/facebook/torrent/
-# Homepage: https://github.com/yous/YousList
-# License: https://github.com/yous/YousList#license
+# Country: INDIA
 
 127.0.0.1 localhost
 ::1 localhost
