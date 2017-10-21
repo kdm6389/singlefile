@@ -3,3 +3,11 @@ wget https://github.com/kdm6389/singlefile/blob/master/lib/firmware/K2013080.mem
 
 cp K2013080.mem /lib/firmware/K2013080.mem
 chmod 644 /lib/firmware/K2013080.mem
+
+
+or use
+scp K2013080.mem root@192.168.1.1:/lib/firmware/K2013080.mem
+ssh root@192.168.1.1
+chmod 644 /lib/firmware/K2013080.mem
+
+reboot
