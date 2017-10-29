@@ -29,6 +29,8 @@ ffactiviy_check(){
 			fi
 		done
 	fi
+	
+	return 0;	#its goog to return
 }
 
 	cd /var/run/hostapd
