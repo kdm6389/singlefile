@@ -22,7 +22,8 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 			fi
 		done )
 		rm -rf /tmp/tmp/wpslockled_wlan0;
-	fi ) &
+	fi 
+	) &
 
 	(
 	if [ "$statusWLAN1" = "OK" ]; then
@@ -37,7 +38,8 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 			fi
 		done )
 		rm -rf /tmp/tmp/wpslockled_wlan1;
-	fi ) &
+	fi 
+	) &
 
 	for i in $(seq 0 59)
 	do
