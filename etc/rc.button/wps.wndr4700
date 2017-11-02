@@ -3,6 +3,7 @@
 if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]; then
 
 	touch /tmp/tmp/wpslockbutton
+	WPSLED="/sys/class/leds/wndr4700:white:logo/brightness"
 
 	cd /var/run/hostapd
 	statusWLAN0="$(hostapd_cli -i wlan0 wps_pbc)"
@@ -53,12 +54,12 @@ ls -l /tmp/tmp/wpslock*
 		fi
 
 		sleep 1
-		echo 1 > "/sys/class/leds/wndr4700:white:logo/brightness"
+		echo 1 > $WPSLED
 		sleep 1
-		echo 0 > "/sys/class/leds/wndr4700:white:logo/brightness"
+		echo 0 > $WPSLED
 	done
 	rm -rf /tmp/tmp/wpslock*
-	echo 0 > "/sys/class/leds/wndr4700:white:logo/brightness"
+	echo 0 > $WPSLED
 
 fi
 
