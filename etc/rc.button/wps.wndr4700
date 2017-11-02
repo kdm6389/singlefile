@@ -15,7 +15,6 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 		( for i in $(seq 0 59)
 		do
 			hostapd_status_wlan0=$(hostapd_cli -p /var/run/hostapd -i wlan0 wps_get_status | grep "PBC Status" | cut -d' ' -f3)
-			echo $hostapd_status_wlan0
 			if [ "$hostapd_status_wlan0" != "Active" ] ; then
 				rm -rf /tmp/tmp/wpslockled_wlan0; break ;
 			else 
@@ -31,7 +30,6 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 		( for i in $(seq 0 59)
 		do
 			hostapd_status_wlan1=$(hostapd_cli -p /var/run/hostapd -i wlan1 wps_get_status | grep "PBC Status" | cut -d' ' -f3)
-			echo $hostapd_status_wlan1
 			if [ "$hostapd_status_wlan1" != "Active" ]; then
 				rm -rf /tmp/tmp/wpslockled_wlan1; break ;
 			else 
