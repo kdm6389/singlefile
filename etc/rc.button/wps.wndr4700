@@ -42,7 +42,7 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 	) &
 
 	sleep 1 #excution order async to sync
-	rm -rf touch /tmp/tmp/wpslockbutton
+	rm -rf /tmp/tmp/wpslockbutton
 
 	for i in $(seq 0 59)
 	do
