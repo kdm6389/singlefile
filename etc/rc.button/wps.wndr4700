@@ -8,7 +8,7 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 	cd /var/run/hostapd
 	statusWLAN0="$(hostapd_cli -i wlan0 wps_pbc)"
 	statusWLAN1="$(hostapd_cli -i wlan1 wps_pbc)"
-
+	
 	(
 	if [ "$statusWLAN0" = "OK" ]; then
 		touch /tmp/tmp/wpslockled_wlan0 
@@ -41,6 +41,9 @@ if [ "$ACTION" = "pressed" -a "$BUTTON" = "wps" -a ! -f /tmp/tmp/wpsbuttonlock ]
 	fi 
 	) &
 
+	sleep 1 #excution order async to sync
+	rm -rf touch /tmp/tmp/wpslockbutton
+
 	for i in $(seq 0 59)
 	do
 		if [ ! -f /tmp/tmp/wpslockled_wlan0 -a ! -f /tmp/tmp/wpslockled_wlan1 ]; then
@@ -57,4 +60,5 @@ fi
 rm -rf /tmp/tmp/wpslock*
 
 return 0
-#
+
+#this script is fancy script, dont expect to be efficent, however we gladly accept your inputs
