@@ -1,5 +1,8 @@
 cd /tmp
 wget https://github.com/kdm6389/singlefile/blob/master/lib/firmware/K2013080.mem
+https not works by defautl in wndr4700
+
+
 
 cp K2013080.mem /lib/firmware/K2013080.mem
 chmod 644 /lib/firmware/K2013080.mem
