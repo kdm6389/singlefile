@@ -60,8 +60,8 @@ sudo nano /boot/cmdline.txt
 vcgencmd bootloader_version
 echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
 vcgencmd otp_dump | grep 17
-sudo mkfs.ext4 -L stpidata /dev/sda1
 devXYZ=/dev/sdaX1;
+sudo mkfs.ext4 -L stpidata $devXYZ
 sudo blkid
 sudo echo "PARTUUID=7d5a2870-01  /home/stpi/sd/  ntfs    nofail,permissions,locale-en_US.utf8 0 2" >> /etc/fstab
 sudo cp /etc/fstab /etc/fstab.bak
@@ -82,13 +82,14 @@ sudo systemctl status syncthing@stpi.service
 sudo nano /lib/systemd/system/syncthing@.service
 sudo nano /etc/systemd/system/multi-user.target.wants/syncthing@stpi.service
 passwd
-ps -aux | grep stpi
+ps -aux | grep $user
 sudo apt-get update && sudo apt-get upgrade -y
 sudo kill -9 
 dmesg | grep journal
 ll /var/cache/apt/archives/
 nano /home/stpi/duckdns.sh
 crontab -l | tail -5
+bussybox 
 mkdir ./.well-known/pki-validation/
 ps -aux | grep 
 sudo apt-get update && sudo apt-get upgrade -y &
