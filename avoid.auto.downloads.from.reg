@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+; This automatically adds several pages to the 'Exception Servers' list
+[HKEY_CURRENT_USER\Software\DownloadManager]
+"ExceptionServers"="siteseal.thawte.com ecom.cimetz.com *.voice2page.com *.1fichier.com *.akamaihd.net *.alterupload.com *.bruneras.com *.cjoint.net *.crocko.com *.datei.to *.depfile.com *.desfichiers.com *.dfichiers.com *.dl4free.com *.fileserving.com *.fourtoutici.top *.load.to *.magix.net *.megadl.fr *.mesfichiers.org *.myvdrive.com *.netkups.com *.nitroflare.com *.nsanedown.com *.oboom.com *.partage-facile.com *.piecejointe.net *.pjointe.com *.rapidgator.net *rapidgator.net *.share-online.biz *share-online.biz *.tdf-cdn.com *.tenvoi.com *.turbobit.net *turbobit.net *.turbobit.ru *turbobit.ru *.uplea.com *.bannedhost.net *venea.net *.ziddu.com"
