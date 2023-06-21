@@ -10,3 +10,4 @@ cscript //nologo /ato
 cscript //nologo /dli
 
 rem tested working ok 21.june.2023
+rem activated for only 180days, run every 6m this cmd. cscript //nologo /ato
