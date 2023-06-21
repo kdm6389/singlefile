@@ -1,6 +1,6 @@
 
 cscript //nologo slmgr.vbs /ipk FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
-rem works for profenal 
+rem works for profenal kms.digiboy.ir
 cscript //nologo slmgr.vbs /skms kms.digiboy.ir					
 cscript //nologo /ato
 cscript //nologo slmgr.vbs /skms kms8.MSGuides.com
