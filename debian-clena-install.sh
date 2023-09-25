@@ -183,7 +183,7 @@ sudo apt purge atmel-firmware firmware-samsung firmware-netxen firmware-bnx2x fi
 
 
 
-
+: <<COMMENT
 Whhat is what
 firmware-amd-graphics (20230210-5) [non-free-firmware]
     Binary firmware for AMD/ATI graphics chips
@@ -243,7 +243,7 @@ firmware-sof-signed (2.2.4-1) [non-free-firmware]
     Intel SOF firmware - signed
 firmware-ti-connectivity (20230210-5) [non-free-firmware]
     Binary firmware for T
-    
+<<COMMENT
     
     
     
@@ -333,4 +333,8 @@ sudo apt-get autoremove # 130MB
 	Removing lightsoff (1:40.0.1-1) ...
 	Removing quadrapassel (1:40.2-1) ...
 sudo apt-get purge gnome-chess #0MB
+
+
+sudo apt-get install gimp inkscape vlc fonts-deva
+#fonts-deva devnagiri-fonts
 
