@@ -243,7 +243,7 @@ firmware-sof-signed (2.2.4-1) [non-free-firmware]
     Intel SOF firmware - signed
 firmware-ti-connectivity (20230210-5) [non-free-firmware]
     Binary firmware for T
-<<COMMENT
+COMMENT
     
     
     
@@ -308,6 +308,7 @@ The following packages have been kept back:
 
 sudo apt-get purge gnome-games
 sudo apt-get autoremove # 130MB
+: <<COMMENT
 	Removing aisleriot (1:3.22.23-1) ...
 	Removing five-or-more (1:3.32.3-1) ...
 	Removing four-in-a-row (1:3.38.1-1+b1) ...
@@ -332,6 +333,7 @@ sudo apt-get autoremove # 130MB
 	Removing libqqwing2v5:amd64 (1.3.4-1.1+b1) ...
 	Removing lightsoff (1:40.0.1-1) ...
 	Removing quadrapassel (1:40.2-1) ...
+COMMENT
 sudo apt-get purge gnome-chess #0MB
 
 
