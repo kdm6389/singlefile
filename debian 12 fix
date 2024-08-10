@@ -1,0 +1,48 @@
+setting > keboard shortcut > Custom Shortcut
+  Name: MyTerminal
+  Command: /usr/bin/gnome-terminal
+  Key: Ctrl + ALt + T
+
+
+
+
+
+
+
+
+
+
+
+Instalattion 
+    sudo apt-get install bash-completion vlc gimp
+
+
+
+
+
+
+
+
+
+
+
+
+Removal of unwanted
+
+    sudo apt-get install aspell-hi
+    sudo apt purge myspell-eo, myspell-es, myspell-et, myspell-fa, myspell-ga, myspell-he, myspell-nb, myspell-nn, myspell-sk, myspell-sq, mythes-de-ch,
+    sudo apt purge aspell-es, aspell-ru, aspell-am, aspell-ar, aspell-ar-large, aspell-bg, aspell-ca, aspell-cs, aspell-cy, aspell-da, aspell-de, aspell-el, aspell-eo, aspell-et, aspell-eu, aspell-fa, aspell-fr, aspell-ga, aspell-gl-minimos, aspell-he, aspell-hr, aspell-hu, aspell-is, aspell-it, aspell-kk, aspell-ku, aspell-lt, aspell-lv, aspell-nl, aspell-pl, aspell-pt-br, aspell-pt-pt, aspell-ro, aspell-sk, aspell-sl, aspell-sv, aspell-tl, aspell-uk
+    sudo apt purge ibrazilian, ibulgarian, icatalan, idanish, idutch, ifrench-gut, ihungarian, iitalian, ilithuanian, ingerman, inorwegian, ipolish, iportuguese, irussian, ispanish, iswiss, 
+    sudo apt purge wbulgarian, wdanish, wfrench, witalian, wpolish, wbrazilian, wdutch, wportuguese 
+      #libreoffice-voikko will be removed
+      
+    sudo apt purge firmware-netronome	#This package contains the binary firmware for Netronome network adapters supported by the nfp driver.\
+    sudo apt purge thunderbird  #thunderbird mail client
+
+    sudo apt purge xfonts-thai xfonts-thai-vor xfonts-thai-etl xfonts-thai-manop xfonts-thai-nectec fonts-thai-tlwg xfonts-thai-poonlap
+      #unwanted thai fonts
+
+  #cmdlist
+      dpkg-query -W -f='${Installed-Size;8}\t${Status;1}\t${Package}\n' | grep -v "\sd\s" | sort -n | cut -f1,3-
+
+
