@@ -28,6 +28,11 @@ del /f /q /s "%USERPROFILE%\OneDrive\*" & rmdir /s /q "%USERPROFILE%\OneDrive"
 
 rem # direct-play for AoE2
 dism /online /enable-feature /featurename:DirectPlay /all
+rem #not used, IE,Media Playback, work folder
+dism /online /disable-feature /featurename:Internet-Explorer-Optional-amd64 /norestart
+dism /online /disable-feature /featurename:MediaPlayback /norestart
+dism /online /disable-feature /featurename:WorkFolders-Client /norestart
+
 
 
 rem #Time-Zone to India Standard Time (UTC+05:30) 
