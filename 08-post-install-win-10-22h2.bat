@@ -1,3 +1,21 @@
+rem #Remove Microsoft Edge and Mail Pins
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "Favorites" /f
+
+rem #Remove the Copilot Button Completely
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowCopilotButton /t REG_DWORD /d 0 /f
+
+rem #Clear Cached Shortcut Files & Apply Changes
+del /f /q "%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*"
+taskkill /f /im explorer.exe & start explorer.exe
+
+
+
+
+
+
+
+
+
 rem #pause windows update for 10y
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v FlightSettingsMaxPauseDays /t REG_DWORD /d 3650 /f
 
@@ -90,6 +108,9 @@ sc config edgeupdate start= disabled
 sc config edgeupdatem start= disabled
 
 
+powershell -ExecutionPolicy Bypass -Command "$apps = @('WindowsFeedbackHub', 'Gethelp', 'ZuneMusic', 'windowscommunicationsapps', 'MicrosoftSolitaireCollection', 'ZuneVideo', 'Office.OneNote', 'SkypeApp', 'BingWeather'); foreach ($app in $apps) { Get-AppxPackage -AllUsers | Where-Object {$_.Name -like \"*$app*\"} | Remove-AppxPackage -AllUsers }"
+powershell -ExecutionPolicy Bypass -Command "$apps = @('WindowsFeedbackHub', 'Gethelp', 'ZuneMusic', 'windowscommunicationsapps', 'MicrosoftSolitaireCollection', 'ZuneVideo', 'Office.OneNote', 'SkypeApp', 'BingWeather'); foreach ($app in $apps) { Get-AppProvisionedAppxPackage -Online | Where-Object {$_.DisplayName -like \"*$app*\"} | Remove-AppProvisionedAppxPackage -Online }"
+taskkill /f /im explorer.exe & start explorer.exe
 
 
 
